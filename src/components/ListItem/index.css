@@ -1,0 +1,129 @@
+.each-entry-top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.each-entry-title {
+  font-size: 20px;
+  margin: 5px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (min-width: 768px) {
+  .each-entry-top-container {
+    align-items: center;
+    font-size: 30px;
+    margin: 5px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+}
+
+.display-update-form-button {
+  width: 60px;
+  height: 40px;
+  background-color: #396eb0;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .display-update-form-button {
+    width: 100px;
+    height: 40px;
+    font-size: 25px;
+  }
+}
+
+.popup-content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  width: 100%;
+  height: 100vh;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-close-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.update-entry-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  width: 50vw;
+}
+
+@media screen and (min-width: 768px) {
+  .update-entry-form {
+    width: 28vw;
+  }
+}
+
+.update-entry-form-label {
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.update-entry-form-input {
+  width: 96%;
+  height: 30px;
+  border-radius: 4px;
+  margin: 0px 0px 10px 0px;
+}
+
+.update-entry-form-submit-button {
+  width: 98%;
+  height: 40px;
+  border: none;
+  background-color: #116530;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 4px;
+  margin: 10px 0px 10px 0px;
+}
+
+.each-entry-body {
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  padding: 5px 0px 5px 0px;
+  margin: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .each-entry-body {
+    font-size: 20px;
+  }
+}
