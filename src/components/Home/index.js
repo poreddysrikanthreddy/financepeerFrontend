@@ -1,12 +1,8 @@
 import {Component} from 'react'
 
-import Popup from 'reactjs-popup'
 import Cookies from 'js-cookie'
 
-import {ImCross} from 'react-icons/im'
-
 import Header from '../Header'
-import ListItem from '../ListItem'
 
 import './index.css'
 
@@ -22,8 +18,7 @@ class Home extends Component {
     selectedFile: null,
     uploadResponse: '',
     entriesList: [],
-    newEntryId: '',
-    newEntryUserId: '',
+
     newTitle: '',
     newBody: '',
   }
@@ -93,7 +88,8 @@ class Home extends Component {
   uploadSelectedFile = async event => {
     const {selectedFile} = this.state
     const jwtToken = Cookies.get('jwt_token')
-    const uploadUrl = 'https://srikanthdisplaydata.herokuapp.com/uploadFile/'
+    const uploadUrl =
+      'https://financepeer-node-webapp.herokuapp.com/uploadFile/'
     const options = {
       method: 'POST',
       headers: {
@@ -128,102 +124,6 @@ class Home extends Component {
         upload
       </button>
     </div>
-  )
-
-  addNewEntryForm = () => (
-    <>
-      <form className="add-entry-form" onSubmit={this.onSubmitAddNewEntryForm}>
-        <label className="add-entry-form-label" htmlFor="entryId">
-          ENTRY ID
-        </label>
-        <input
-          className="add-entry-form-input"
-          id="addId"
-          onChange={this.onChangeEntryId}
-        />
-        <label className="add-entry-form-label" htmlFor="userId">
-          USER ID
-        </label>
-        <input
-          className="add-entry-form-input"
-          id="userId"
-          onChange={this.onChangeUserId}
-        />
-        <label className="add-entry-form-label" htmlFor="addTitle">
-          TITLE
-        </label>
-        <input
-          className="add-entry-form-input"
-          id="addTitle"
-          onChange={this.onChangeTitle}
-        />
-        <label className="add-entry-form-label" htmlFor="addBody">
-          BODY
-        </label>
-        <input
-          className="add-entry-form-input"
-          id="addBody"
-          onChange={this.onChangeBody}
-        />
-        <button className="add-entry-form-submit-button" type="submit">
-          Add Entry
-        </button>
-      </form>
-    </>
-  )
-
-  updateEntriesList = newEntry => {
-    const {entriesList} = this.state
-    const updatedEntriesList = entriesList
-    const currentEntry = entriesList.find(
-      eachItem => eachItem.id === newEntry.id,
-    )
-    const indexOfEntry = entriesList.findIndex(
-      eachItem => eachItem.id === newEntry.id,
-    )
-    updatedEntriesList.splice(indexOfEntry, 1, newEntry)
-    this.setState({entriesList: updatedEntriesList})
-    alert(
-      `Entry With The Title: "${currentEntry.title}" Is Going To Be Updated`,
-    )
-  }
-
-  renderEntriesList = () => {
-    const {entriesList} = this.state
-    return (
-      <div className="home-list-container">
-        <ul className="home-entries-list">
-          {entriesList.map(eachItem => (
-            <ListItem
-              key={eachItem.id}
-              eachEntry={eachItem}
-              updateEntriesList={this.updateEntriesList}
-            />
-          ))}
-        </ul>
-      </div>
-    )
-  }
-
-  addEntryPopup = () => (
-    <Popup
-      className="popup-content"
-      trigger={
-        <button className="button-style display-add-form-button">
-          Add New Entry
-        </button>
-      }
-      modal
-    >
-      {close => (
-        <div className="popup-content-container">
-          <button className="popup-close-button" type="button" onClick={close}>
-            <ImCross color="#ffffff" size="30px" />
-          </button>
-          {this.addNewEntryForm()}
-        </div>
-      )}
-    </Popup>
   )
 
   render() {

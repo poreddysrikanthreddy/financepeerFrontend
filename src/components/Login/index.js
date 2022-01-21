@@ -39,9 +39,14 @@ class Login extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
-    const url = 'https://apis.ccbp.in/login'
+    const url =
+      'https://financepeer-node-webapp.herokuapp.com/ deployed to Heroku/login/'
     const options = {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
 
       body: JSON.stringify(userDetails),
     }

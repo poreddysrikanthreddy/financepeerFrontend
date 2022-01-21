@@ -32,7 +32,7 @@ class ListItem extends Component {
   render() {
     const eachEntry = this.props
     return (
-      <li>
+      <li className="border">
         <div className="each-entry-top-container">
           <p>{eachEntry.eachEntry.id}</p>
         </div>
@@ -41,7 +41,6 @@ class ListItem extends Component {
           <h1 className="each-entry-title">{eachEntry.eachEntry.title}</h1>
         </div>
         <p className="each-entry-body">{eachEntry.eachEntry.body}</p>
-        <hr className="each-entry-hr-line" />
       </li>
     )
   }
