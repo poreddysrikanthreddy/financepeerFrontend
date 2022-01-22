@@ -157,3 +157,6 @@ class Home extends Component {
 }
 
 export default Home
+© 2022 GitHub, Inc.
+Terms
+Privacy

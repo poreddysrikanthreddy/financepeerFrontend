@@ -39,8 +39,7 @@ class Login extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
-    const url =
-      'https://financepeer-node-webapp.herokuapp.com/ deployed to Heroku/login/'
+    const url = 'https://financepeer-node-webapp.herokuapp.com/login/'
     const options = {
       method: 'POST',
       headers: {
@@ -132,3 +131,4 @@ class Login extends Component {
 }
 
 export default Login
+
